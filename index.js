@@ -3,12 +3,16 @@ const ui = require('readline').createInterface({
     output: process.stdout
 });
 
-ui.question('Hi there! What is your name?\n\n', input => {
+ui.question('Hi there! What is your first name?\n\n', input => {
     const message = sayHello(input)
     console.log(message)
     ui.close();
 })
-
-function sayHello(name){
-    return `\tHello, ${name}!\n`
+ui.question('Hi there! What is your surname?\n\n', input => {
+    const message = sayHello(input)
+    console.log(message)
+    ui.close();
+})
+function sayHello(name, surname){
+    return `\tHello, ${name} ${surname}!\n`
 }
